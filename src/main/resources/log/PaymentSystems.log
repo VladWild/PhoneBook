@@ -1,0 +1,3 @@
+2018-09-19 13:39:09,247 INFO  com.vladislavgusev.bookphone.PhoneBook             - Application "Phone Book" is start
+2018-09-19 13:39:09,247 DEBUG com.vladislavgusev.bookphone.PhoneBook             - Application "Payment Systems" is run
+2018-09-19 13:39:09,279 ERROR com.vladislavgusev.bookphone.PhoneBook             - Entered unknown command: xc
