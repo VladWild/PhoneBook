@@ -1,6 +1,6 @@
 package com.vladislavgusev.bookphone.requests.commands;
 
-import com.vladislavgusev.bookphone.data.Record;
+import com.vladislavgusev.bookphone.data.User;
 import com.vladislavgusev.bookphone.datalayer.UserDAO;
 import com.vladislavgusev.bookphone.printers.Printer;
 import com.vladislavgusev.bookphone.reports.Report;
@@ -19,7 +19,7 @@ public class SelectUsers implements Command {
 
     @Override
     public void execute(Printer printer, Report report) throws SQLException, IOException {
-        List<Record> records = userDAO.selectAllUsers();
-        printer.print(report.getReportAllUsers(records));
+        List<User> users = userDAO.selectAllUsers();
+        printer.print(report.getReportAllUsers(users));
     }
 }

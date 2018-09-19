@@ -1,4 +1,6 @@
-2018-09-19 23:05:39,880 INFO  com.vladislavgusev.bookphone.PhoneBook             - Application "Phone Book" is start
-2018-09-19 23:05:39,884 DEBUG com.vladislavgusev.bookphone.PhoneBook             - Application "Payment Systems" is run
-2018-09-19 23:05:39,884 INFO  com.vladislavgusev.bookphone.PhoneBook             - Initializing the printer
-2018-09-19 23:05:39,892 INFO  com.vladislavgusev.bookphone.PhoneBook             - Initialization of the input command parsing
+2018-09-20 01:31:46,598 INFO  com.vladislavgusev.bookphone.PhoneBook             - Application "Phone Book" is start
+2018-09-20 01:31:46,600 DEBUG com.vladislavgusev.bookphone.PhoneBook             - Application "Payment Systems" is run
+2018-09-20 01:31:46,600 INFO  com.vladislavgusev.bookphone.PhoneBook             - Initializing the printer for output
+2018-09-20 01:31:46,606 INFO  com.vladislavgusev.bookphone.PhoneBook             - Create a connection to the database
+2018-09-20 01:31:47,270 INFO  com.vladislavgusev.bookphone.PhoneBook             - Initialization of the input command parsing
+2018-09-20 01:31:47,274 ERROR com.vladislavgusev.bookphone.PhoneBook             - Entered empty request

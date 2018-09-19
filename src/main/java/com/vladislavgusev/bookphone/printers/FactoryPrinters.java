@@ -1,5 +1,7 @@
 package com.vladislavgusev.bookphone.printers;
 
+import java.io.IOException;
+
 public enum FactoryPrinters {
     CONSOLE {
         @Override
@@ -8,14 +10,14 @@ public enum FactoryPrinters {
         }
     }, FILE {
         @Override
-        protected Printer getPrinter() {
+        protected Printer getPrinter() throws IOException {
             return new FilePrinter();
         }
     };
 
-    protected abstract Printer getPrinter();
+    protected abstract Printer getPrinter() throws IOException;
 
-    public static Printer getTypePrinter(FactoryPrinters printerType){
+    public static Printer getTypePrinter(FactoryPrinters printerType) throws IOException {
         return printerType.getPrinter();
     }
 }

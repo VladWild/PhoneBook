@@ -10,9 +10,9 @@ public class CommandParser implements Parser {
 
     public CommandParser(String[] command){
         validation(command);                        //Exception в конструкторе ?
-        commandType = getCommand(command[0]);
-        name = command[1];
-        number = command[2];
+        initCommand(command[0]);
+        initName(commandType, command);
+        initNumber(commandType, command);
     }
 
     private boolean isDigit(String s) {
@@ -42,10 +42,17 @@ public class CommandParser implements Parser {
         }
     }
 
-    private CommandType getCommand(String command){
-        return command.equals("set") ? CommandType.INSERT : CommandType.SELECT;
+    private void initCommand(String command){
+        commandType = command.equals("set") ? CommandType.INSERT : CommandType.SELECT;
     }
 
+    private void initName(CommandType commandType, String[] command){
+        name = commandType == CommandType.INSERT ? command[1] : null;
+    }
+
+    private void initNumber(CommandType commandType, String[] command){
+        number = commandType == CommandType.INSERT ? command[2] : null;
+    }
 
     @Override
     public CommandType getCommandType() {

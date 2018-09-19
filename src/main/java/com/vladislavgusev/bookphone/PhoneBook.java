@@ -15,6 +15,7 @@ import com.vladislavgusev.bookphone.parser.command.exeptions.*;
 import org.apache.log4j.Logger;
 
 import java.io.IOException;
+import java.sql.Connection;
 import java.sql.SQLException;
 
 public class PhoneBook {
@@ -27,23 +28,26 @@ public class PhoneBook {
     }
 
     private void run() throws IOException {
-        LOGGER.info("Initializing the printer");
+        LOGGER.info("Initializing the printer for output");
         Printer printer = FactoryPrinters.getTypePrinter(FactoryPrinters.CONSOLE);
 
-        try{
+        DBType dbType = DBType.ORACLE;
+        LOGGER.info("Create a connection to the database");
+        try (Connection connection = DAOFactory.getInstance(dbType)
+                .getConnection()) {
             LOGGER.info("Initialization of the input command parsing");
             Parser parser = new CommandParser(request);
 
-            LOGGER.info("Get an object of factory");
-            DAOFactory factory = DAOFactory.getInstance(DBType.ORACLE);
-            LOGGER.info("Get an UserDAO");
-            UserDAO userDAO = factory.getUserDAO();
+            LOGGER.info("Get an object DataBase from factory");
+            DAOFactory factory = DAOFactory.getInstance(dbType);     //?  2-ой раз
+            LOGGER.info("Get an UserDAO for manipulating database data");
+            UserDAO userDAO = factory.getUserDAO(connection);
 
             LOGGER.info("Initializing the report");
             Report report = new SimpleReport();
 
             LOGGER.info("Initializing the required command by request");
-            Command command = RequestInvoker.getCommand(request, userDAO);
+            Command command = RequestInvoker.getCommand(parser, userDAO);
             LOGGER.info("Execute the required command");
             command.execute(printer, report);
         } catch (CommandException e) {

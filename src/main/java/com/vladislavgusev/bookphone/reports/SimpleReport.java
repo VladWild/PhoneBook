@@ -1,6 +1,5 @@
 package com.vladislavgusev.bookphone.reports;
 
-import com.vladislavgusev.bookphone.data.Record;
 import com.vladislavgusev.bookphone.data.User;
 
 import java.util.List;
@@ -27,25 +26,25 @@ public class SimpleReport implements Report {
         return str.toString();
     }
 
-    private String getRecord(Record record) {
+    private String getRecord(User user) {
         StringBuilder str = new StringBuilder();
         str.append(DELIMITER);
         str.append(SPACE);
-        str.append(record.getId());
+        str.append(user.getId());
         str.append(getSpacesByCount(ID_COUNT - 1 -
-                String.valueOf(record.getId()).length() - 1));
+                String.valueOf(user.getId()).length() - 1));
         str.append(SPACE);
         str.append(DELIMITER);
         str.append(SPACE);
-        str.append(record.getUser().getName());
+        str.append(user.getName());
         str.append(getSpacesByCount(NAME_COUNT - 1 -
-                record.getUser().getName().length() - 1));
+                user.getName().length() - 1));
         str.append(SPACE);
         str.append(DELIMITER);
         str.append(SPACE);
-        str.append(record.getUser().getNumber());
+        str.append(user.getNumber());
         str.append(getSpacesByCount(PHONE_COUNT - 1 -
-                String.valueOf(record.getUser().getNumber()).length() - 1));
+                String.valueOf(user.getNumber()).length() - 1));
         str.append(SPACE);
         str.append(DELIMITER);
         str.append(ENTER);
@@ -85,7 +84,7 @@ public class SimpleReport implements Report {
     }
 
     @Override
-    public String getReportAllUsers(List<Record> records) {
+    public String getReportAllUsers(List<User> records) {
         StringBuilder str = new StringBuilder();
         str.append(SELECT_INFO);
         str.append(ENTER);

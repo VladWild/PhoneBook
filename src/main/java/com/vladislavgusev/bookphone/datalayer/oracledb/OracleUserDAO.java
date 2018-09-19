@@ -1,6 +1,5 @@
 package com.vladislavgusev.bookphone.datalayer.oracledb;
 
-import com.vladislavgusev.bookphone.data.Record;
 import com.vladislavgusev.bookphone.data.User;
 import com.vladislavgusev.bookphone.datalayer.UserDAO;
 
@@ -11,8 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class OracleUserDAO implements UserDAO {
-    private static ResourceMenu manager = ResourceMenu.INSTANCE;
+class OracleUserDAO implements UserDAO {
     private Connection connection;
 
     private OracleUserDAO(){
@@ -43,37 +41,34 @@ public class OracleUserDAO implements UserDAO {
         ps.executeUpdate();
 
         ResultSet rs = ps.getGeneratedKeys();
-        int id = 0;
+        Integer id = null;
 
         if(rs.next()){
             id = rs.getInt(1);
         }
-        rs.close();
 
+        rs.close();
         ps.close();
 
-        connection.close(); //?
-
-        return id;
+        return id != null ? id.intValue() : 0;
     }
 
     @Override
     @Select(request = "SELECT id, name, phonenumber FROM PHONEBOOK")
-    public List<Record> selectAllUsers() throws SQLException {
-        List<Record> records = new ArrayList<>();
+    public List<User> selectAllUsers() throws SQLException {
+        List<User> records = new ArrayList<>();
         Select request = (Select) getAnnotationWithRequest(Select.class);
 
         Statement statement = connection.createStatement();
         ResultSet result = statement.executeQuery(request.request());
         while (result.next()){
-            records.add(new Record(result.getInt(1),
-                    new User(result.getString(2), result.getString(3))));
+            records.add(new User(result.getInt(1),
+                    result.getString(2),
+                    result.getString(3)));
         }
 
         result.close();
         statement.close();
-
-        connection.close();  //?
 
         return records;
     }
