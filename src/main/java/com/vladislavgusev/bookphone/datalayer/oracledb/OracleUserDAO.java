@@ -4,9 +4,12 @@ import com.vladislavgusev.bookphone.data.Record;
 import com.vladislavgusev.bookphone.data.User;
 import com.vladislavgusev.bookphone.datalayer.UserDAO;
 
+import java.lang.annotation.Annotation;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class OracleUserDAO implements UserDAO {
     private static ResourceMenu manager = ResourceMenu.INSTANCE;
@@ -20,10 +23,20 @@ public class OracleUserDAO implements UserDAO {
         this.connection = connection;
     }
 
-    @Override
+    private Annotation getAnnotationWithRequest(Class<? extends Annotation> annotation){
+        return Arrays.stream(getClass().getMethods())
+                .filter(method -> method.isAnnotationPresent(annotation))
+                .map(method -> method.getAnnotation(annotation))
+                .collect(Collectors.toList())
+                .get(0);
+    }
 
+    @Override
+    @Insert(request = "INSERT INTO PhoneBook VALUES (seq_id.NEXTVAL, ?, ?)")
     public int insertUser(User user) throws SQLException {
-        PreparedStatement ps = connection.prepareStatement(manager.getString("insert"),
+        Insert request = (Insert) getAnnotationWithRequest(Insert.class);
+
+        PreparedStatement ps = connection.prepareStatement(request.request(),
                 new String[]{ "ID" });
         ps.setString(1, user.getName());
         ps.setString(2, user.getNumber());
@@ -45,11 +58,13 @@ public class OracleUserDAO implements UserDAO {
     }
 
     @Override
+    @Select(request = "SELECT id, name, phonenumber FROM PHONEBOOK")
     public List<Record> selectAllUsers() throws SQLException {
         List<Record> records = new ArrayList<>();
+        Select request = (Select) getAnnotationWithRequest(Select.class);
 
         Statement statement = connection.createStatement();
-        ResultSet result = statement.executeQuery(manager.getString("select"));
+        ResultSet result = statement.executeQuery(request.request());
         while (result.next()){
             records.add(new Record(result.getInt(1),
                     new User(result.getString(2), result.getString(3))));

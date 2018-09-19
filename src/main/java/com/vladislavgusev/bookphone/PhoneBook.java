@@ -18,7 +18,7 @@ import java.sql.SQLException;
 
 public class PhoneBook {
     private static final Printer printer =
-            FactoryPrinters.getTypePrinter(FactoryPrinters.FILE);
+            FactoryPrinters.getTypePrinter(FactoryPrinters.CONSOLE);
     private static final Report report =
             new SimpleReport();
 
