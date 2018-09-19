@@ -1,3 +1,4 @@
-2018-09-19 13:39:09,247 INFO  com.vladislavgusev.bookphone.PhoneBook             - Application "Phone Book" is start
-2018-09-19 13:39:09,247 DEBUG com.vladislavgusev.bookphone.PhoneBook             - Application "Payment Systems" is run
-2018-09-19 13:39:09,279 ERROR com.vladislavgusev.bookphone.PhoneBook             - Entered unknown command: xc
+2018-09-19 23:05:39,880 INFO  com.vladislavgusev.bookphone.PhoneBook             - Application "Phone Book" is start
+2018-09-19 23:05:39,884 DEBUG com.vladislavgusev.bookphone.PhoneBook             - Application "Payment Systems" is run
+2018-09-19 23:05:39,884 INFO  com.vladislavgusev.bookphone.PhoneBook             - Initializing the printer
+2018-09-19 23:05:39,892 INFO  com.vladislavgusev.bookphone.PhoneBook             - Initialization of the input command parsing
