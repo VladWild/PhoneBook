@@ -1,4 +1,4 @@
-package com.vladislavgusev.bookphone.parser.command.exeptions;
+package com.vladislavgusev.bookphone.parsers.command.exeptions;
 
 public class WrongCommandSet extends CommandException {
     private static final String DEVELOPER = "Wrong command: set";

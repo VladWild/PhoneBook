@@ -1,4 +1,4 @@
-package com.vladislavgusev.bookphone.parser.command;
+package com.vladislavgusev.bookphone.parsers;
 
 import com.vladislavgusev.bookphone.requests.CommandType;
 

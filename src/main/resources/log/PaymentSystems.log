@@ -1,25 +1,25 @@
-2018-09-20 10:26:19,384 INFO  com.vladislavgusev.bookphone.PhoneBook             - Application "Phone Book" is start
-2018-09-20 10:26:19,384 DEBUG com.vladislavgusev.bookphone.PhoneBook             - Application "Payment Systems" is run
-2018-09-20 10:26:19,384 INFO  com.vladislavgusev.bookphone.PhoneBook             - Initializing the printer for output
-2018-09-20 10:26:19,384 DEBUG ev.bookphone.datalayer.oracledb.OracleDBDAOFactory - Create a connection to the database
-2018-09-20 10:26:20,038 INFO  com.vladislavgusev.bookphone.PhoneBook             - Initialization of the input command parsing
-2018-09-20 10:26:20,038 DEBUG dislavgusev.bookphone.parser.command.CommandParser - Checking for an empty query
-2018-09-20 10:26:20,038 DEBUG dislavgusev.bookphone.parser.command.CommandParser - Check for an unknown command
-2018-09-20 10:26:20,038 DEBUG dislavgusev.bookphone.parser.command.CommandParser - Check for an erroneous command SET
-2018-09-20 10:26:20,038 DEBUG dislavgusev.bookphone.parser.command.CommandParser - Check for a number phone
-2018-09-20 10:26:20,038 DEBUG dislavgusev.bookphone.parser.command.CommandParser - Check for an erroneous command GET
-2018-09-20 10:26:20,038 DEBUG dislavgusev.bookphone.parser.command.CommandParser - Initialization the command type
-2018-09-20 10:26:20,038 DEBUG dislavgusev.bookphone.parser.command.CommandParser - Initializing the user name
-2018-09-20 10:26:20,038 DEBUG dislavgusev.bookphone.parser.command.CommandParser - Initialization number
-2018-09-20 10:26:20,038 INFO  com.vladislavgusev.bookphone.PhoneBook             - Get an object DataBase from factory
-2018-09-20 10:26:20,038 INFO  com.vladislavgusev.bookphone.PhoneBook             - Get an UserDAO for manipulating database data
-2018-09-20 10:26:20,038 INFO  com.vladislavgusev.bookphone.PhoneBook             - Initializing the report
-2018-09-20 10:26:20,054 INFO  com.vladislavgusev.bookphone.PhoneBook             - Initializing the required command by request
-2018-09-20 10:26:20,054 INFO  com.vladislavgusev.bookphone.PhoneBook             - Execute the required command
-2018-09-20 10:26:20,054 DEBUG islavgusev.bookphone.requests.commands.SelectUsers - Get all "Users" from "UserDAO"
-2018-09-20 10:26:20,054 DEBUG avgusev.bookphone.datalayer.oracledb.OracleUserDAO - Get "Select" annotation for getting a request to a data base
-2018-09-20 10:26:20,159 DEBUG avgusev.bookphone.datalayer.oracledb.OracleUserDAO - Get "Statement" to send a request
-2018-09-20 10:26:20,245 DEBUG avgusev.bookphone.datalayer.oracledb.OracleUserDAO - Get "ResultSet" by request for a getting results
-2018-09-20 10:26:20,323 DEBUG avgusev.bookphone.datalayer.oracledb.OracleUserDAO - Close "ResultSet"
-2018-09-20 10:26:20,323 DEBUG avgusev.bookphone.datalayer.oracledb.OracleUserDAO - Close "PreparedStatement"
-2018-09-20 10:26:20,323 DEBUG islavgusev.bookphone.requests.commands.SelectUsers - Print report on getting all users from "UserDAO"
+2018-09-20 10:53:58,886 INFO  com.vladislavgusev.bookphone.PhoneBook             - Application "Phone Book" is start
+2018-09-20 10:53:58,889 DEBUG com.vladislavgusev.bookphone.PhoneBook             - Application "Payment Systems" is run
+2018-09-20 10:53:58,890 INFO  com.vladislavgusev.bookphone.PhoneBook             - Initializing the printer for output
+2018-09-20 10:53:58,899 DEBUG ev.bookphone.datalayer.oracledb.OracleDBDAOFactory - Create a connection to the database
+2018-09-20 10:53:59,507 INFO  com.vladislavgusev.bookphone.PhoneBook             - Initialization of the input command parsing
+2018-09-20 10:53:59,511 DEBUG islavgusev.bookphone.parsers.command.CommandParser - Checking for an empty query
+2018-09-20 10:53:59,511 DEBUG islavgusev.bookphone.parsers.command.CommandParser - Check for an unknown command
+2018-09-20 10:53:59,511 DEBUG islavgusev.bookphone.parsers.command.CommandParser - Check for an erroneous command SET
+2018-09-20 10:53:59,511 DEBUG islavgusev.bookphone.parsers.command.CommandParser - Check for a number phone
+2018-09-20 10:53:59,511 DEBUG islavgusev.bookphone.parsers.command.CommandParser - Check for an erroneous command GET
+2018-09-20 10:53:59,511 DEBUG islavgusev.bookphone.parsers.command.CommandParser - Initialization the command type
+2018-09-20 10:53:59,511 DEBUG islavgusev.bookphone.parsers.command.CommandParser - Initializing the user name
+2018-09-20 10:53:59,511 DEBUG islavgusev.bookphone.parsers.command.CommandParser - Initialization number
+2018-09-20 10:53:59,512 INFO  com.vladislavgusev.bookphone.PhoneBook             - Get an object DataBase from factory
+2018-09-20 10:53:59,512 INFO  com.vladislavgusev.bookphone.PhoneBook             - Get an UserDAO for manipulating database data
+2018-09-20 10:53:59,513 INFO  com.vladislavgusev.bookphone.PhoneBook             - Initializing the report
+2018-09-20 10:53:59,514 INFO  com.vladislavgusev.bookphone.PhoneBook             - Initializing the required command by request
+2018-09-20 10:53:59,516 INFO  com.vladislavgusev.bookphone.PhoneBook             - Execute the required command
+2018-09-20 10:53:59,516 DEBUG islavgusev.bookphone.requests.commands.SelectUsers - Get all "Users" from "UserDAO"
+2018-09-20 10:53:59,516 DEBUG avgusev.bookphone.datalayer.oracledb.OracleUserDAO - Get "Select" annotation for getting a request to a data base
+2018-09-20 10:53:59,598 DEBUG avgusev.bookphone.datalayer.oracledb.OracleUserDAO - Get "Statement" to send a request
+2018-09-20 10:53:59,659 DEBUG avgusev.bookphone.datalayer.oracledb.OracleUserDAO - Get "ResultSet" by request for a getting results
+2018-09-20 10:53:59,688 DEBUG avgusev.bookphone.datalayer.oracledb.OracleUserDAO - Close "ResultSet"
+2018-09-20 10:53:59,689 DEBUG avgusev.bookphone.datalayer.oracledb.OracleUserDAO - Close "PreparedStatement"
+2018-09-20 10:53:59,689 DEBUG islavgusev.bookphone.requests.commands.SelectUsers - Print report on getting all users from "UserDAO"

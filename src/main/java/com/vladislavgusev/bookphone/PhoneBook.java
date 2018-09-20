@@ -3,15 +3,15 @@ package com.vladislavgusev.bookphone;
 import com.vladislavgusev.bookphone.datalayer.DAOFactory;
 import com.vladislavgusev.bookphone.datalayer.DBType;
 import com.vladislavgusev.bookphone.datalayer.UserDAO;
-import com.vladislavgusev.bookphone.parser.command.CommandParser;
-import com.vladislavgusev.bookphone.parser.command.Parser;
+import com.vladislavgusev.bookphone.parsers.command.CommandParser;
+import com.vladislavgusev.bookphone.parsers.Parser;
+import com.vladislavgusev.bookphone.parsers.command.exeptions.CommandException;
 import com.vladislavgusev.bookphone.printers.FactoryPrinters;
 import com.vladislavgusev.bookphone.printers.Printer;
 import com.vladislavgusev.bookphone.reports.Report;
 import com.vladislavgusev.bookphone.reports.SimpleReport;
 import com.vladislavgusev.bookphone.requests.Command;
 import com.vladislavgusev.bookphone.requests.RequestInvoker;
-import com.vladislavgusev.bookphone.parser.command.exeptions.*;
 import org.apache.log4j.Logger;
 
 import java.io.IOException;

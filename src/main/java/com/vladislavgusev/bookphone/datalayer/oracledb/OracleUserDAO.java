@@ -2,7 +2,6 @@ package com.vladislavgusev.bookphone.datalayer.oracledb;
 
 import com.vladislavgusev.bookphone.data.User;
 import com.vladislavgusev.bookphone.datalayer.UserDAO;
-import com.vladislavgusev.bookphone.parser.command.CommandParser;
 import org.apache.log4j.Logger;
 
 import java.lang.annotation.Annotation;

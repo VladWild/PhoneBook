@@ -1,6 +1,7 @@
-package com.vladislavgusev.bookphone.parser.command;
+package com.vladislavgusev.bookphone.parsers.command;
 
-import com.vladislavgusev.bookphone.parser.command.exeptions.*;
+import com.vladislavgusev.bookphone.parsers.Parser;
+import com.vladislavgusev.bookphone.parsers.command.exeptions.*;
 import com.vladislavgusev.bookphone.requests.CommandType;
 import org.apache.log4j.Logger;
 

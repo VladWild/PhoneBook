@@ -1,4 +1,4 @@
-package com.vladislavgusev.bookphone.parser.command.exeptions;
+package com.vladislavgusev.bookphone.parsers.command.exeptions;
 
 public class EmptyRequest extends CommandException {
     private static final String DEVELOPER = "Entered empty request";

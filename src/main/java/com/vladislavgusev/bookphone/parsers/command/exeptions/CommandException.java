@@ -1,4 +1,4 @@
-package com.vladislavgusev.bookphone.parser.command.exeptions;
+package com.vladislavgusev.bookphone.parsers.command.exeptions;
 
 public abstract class CommandException extends RuntimeException {
     CommandException(String DEVELOPER){

@@ -16,13 +16,13 @@ public class OracleDBDAOFactory extends DAOFactory{
 
     private static OracleDBDAOFactory instance;
 
-    private final ResourceMenu manager = new ResourceMenu();
+    private final ResourceMenu manager = ResourceMenu.getInstance();
 
     private OracleDBDAOFactory() throws IOException {
 
     }
 
-    public static OracleDBDAOFactory getInstance() throws IOException {
+    public static synchronized OracleDBDAOFactory getInstance() throws IOException {
         if (instance == null) {
             instance = new OracleDBDAOFactory();
         }

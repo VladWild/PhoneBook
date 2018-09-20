@@ -10,7 +10,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Properties;
 
 public class FilePrinter implements Printer{
-    private final ResourceMenu manager = new ResourceMenu();
+    private final ResourceMenu manager = ResourceMenu.getInstance();
 
     FilePrinter() throws IOException {
 

@@ -2,7 +2,7 @@ package com.vladislavgusev.bookphone.requests;
 
 import com.vladislavgusev.bookphone.data.User;
 import com.vladislavgusev.bookphone.datalayer.UserDAO;
-import com.vladislavgusev.bookphone.parser.command.Parser;
+import com.vladislavgusev.bookphone.parsers.Parser;
 import com.vladislavgusev.bookphone.requests.commands.InsertUser;
 import com.vladislavgusev.bookphone.requests.commands.SelectUsers;
 
