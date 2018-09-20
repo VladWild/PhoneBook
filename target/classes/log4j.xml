@@ -4,7 +4,7 @@
 <log4j:configuration debug="false" xmlns:log4j="http://jakarta.apache.org/log4j/">
 
     <appender name="ConsoleAppender" class="org.apache.log4j.ConsoleAppender">
-        <param name="Threshold" value="TRACE"/>
+        <param name="Threshold" value="INFO"/>
         <param name="Target" value="System.out"/>
         <layout class="org.apache.log4j.PatternLayout">
             <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p %-38.38c - %m%n" />
@@ -12,7 +12,7 @@
     </appender>
 
     <appender name="RollingFileAppender" class="org.apache.log4j.RollingFileAppender">
-        <param name="Threshold" value="TRACE"/>
+        <param name="Threshold" value="DEBUG"/>
         <param name="File" value="src/main/resources/log/PaymentSystems.log"/>
         <param name="append" value="false"/>
         <param name="MaxFileSize" value="5KB"/>
